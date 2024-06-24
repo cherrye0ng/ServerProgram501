@@ -6,7 +6,7 @@
 
 
 <head>
-    <title>Member Join Page</title>
+    <title>Member Upate Page</title>
 </head>
 
 <div layout:fragment="content">
@@ -14,13 +14,13 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    JOIN
+                    회원수정
                 </div>
                 <div class="card-body">
-                    <form id="registrationForm" action="/member/join" method="post">
+                    <form id="registrationForm" action="/member/update" method="post">
                         <div class="input-group mb-3">
                             <span class="input-group-text">MID</span>
-                            <input type="text" name="mid" class="form-control">
+                            <input type="text" name="mid" class="form-control" th:value="${user.mid}" readonly>
                         </div>
 
                         <div class="input-group mb-3">
@@ -30,7 +30,7 @@
 
                         <div class="input-group mb-3">
                             <span class="input-group-text">EMAIL</span>
-                            <input type="email" name="email" class="form-control">
+                            <input type="email" name="email" class="form-control" th:value="${user.email}">
                         </div>
 
 <!--                        파일 첨부 하는 화면 넣기-->
@@ -55,7 +55,7 @@
 
                         <div class="my-4">
                             <div class="float-end">
-                                <button type="submit" class="btn btn-primary" onclick="submitForm()">회원가입</button>
+                                <button type="submit" class="btn btn-primary" onclick="submitForm()">회원수정하기</button>
                                 <button type="reset" class="btn btn-secondary">초기화</button>
                             </div>
                         </div>
